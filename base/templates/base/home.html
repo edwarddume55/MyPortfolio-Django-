@@ -2,18 +2,7 @@
     {%extends 'base/main.html'%}
     {%load static%}
     {%block content%}
-    <section class="navigation-bar">
-        <a class="nav-link" href="#">
-            Home
-        </a>
-        <a class="nav-link" href="#">
-            Projects
-        </a>
-        <a class="nav-link" href="#">
-            Contacts
-        </a>
 
-    </section>
 
     <section class="hero">
         <div class="hero-content">
@@ -36,10 +25,13 @@
         <h5>Projects that makes my Journey worthwhile</h5>
 
         <div class="projects-wrapper">
+
             {%for project in projects%}
             <div class="project-column">
+                <a href="{%url 'project' project.id %}">
                <img class="project-thumbnail" src="{{project.thumbnail}}" alt="">
-                <div class="project-body">
+                </a>
+               <div class="project-body">
                     <h5>{{project.title}}</h5>
                 </div>
             </div>
