@@ -99,6 +99,11 @@ body{
 .project-image{
     max-width: 800px;
 }
+.contact-form{
+display: block;
+max-width:600px;
+margin: 0 auto;	
+}
 
 @media(max-width:900px){
     .hero-content-intro{
