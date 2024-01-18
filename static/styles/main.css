@@ -87,6 +87,7 @@ body{
 }
 .other-skills-wrapper{
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
 }
 .skill-tag{
@@ -94,6 +95,7 @@ body{
     width: fit-content;
     padding: 3px 20px;
     border-radius: 20px;
+
 
 }
 .project-image{
