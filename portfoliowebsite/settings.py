@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-bv1j9rzr@zx$=y8stji(r2r1caqt+v#6g1$_8_r5!vcy3dgk82
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -80,10 +81,16 @@ WSGI_APPLICATION = 'portfoliowebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'railway',
+        'USER':'postgres',
+        'PASSWORD':'cDbbBd1aEg52e*bDGE1E*1DCf-e66GBB',
+        'HOST':'monorail.proxy.rlwy.net',
+        'PORT':'11115',
     }
 }
+
+
 
 
 # Password validation
@@ -120,18 +127,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-# STATIC_ROOT = 'staticfiles'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-MEDIA_URLS ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-CKEDITOR_UPLOAD_PATH ='uploads/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

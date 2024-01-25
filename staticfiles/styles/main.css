@@ -116,6 +116,10 @@ body{
 .project-image{
     max-width: 800px;
 }
+.footer{
+    background-color: #1F2428;
+}
+ 
 
 @media(max-width:900px){
     .hero-content-intro{

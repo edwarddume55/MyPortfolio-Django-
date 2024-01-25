@@ -84,6 +84,14 @@ body{
 .skill-wrapper{
     margin-top: 2em;
     margin-bottom: 2em;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+.skill-logo{
+    object-fit: contain;
+    width: 60pxpx;
+    width: 60px;
 }
 .other-skills-wrapper{
     display: flex;
@@ -95,8 +103,6 @@ body{
     width: fit-content;
     padding: 3px 20px;
     border-radius: 20px;
-
-
 }
 .project-image{
     max-width: 800px;
@@ -127,4 +133,13 @@ margin: 0 auto;
     .skills-container{
         width: 100%;
     } 
+    .skill-wrapper{
+        flex-flow: column;
+    }
+}
+
+@media(max-width:600px){
+    .skill-wrapper{
+        flex-flow: column;
+    }
 }

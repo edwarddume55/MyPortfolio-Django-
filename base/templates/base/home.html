@@ -19,7 +19,7 @@
         
     </section>
 
-    <section class="container section-2">
+    <section class="container section-2" id="projects">
 
         <h3>My Projects</h3>
         <h5>Projects that makes my Journey worthwhile</h5>
@@ -50,17 +50,22 @@
 
     <section class="section-1">
     <div class="skills-container">
-        <h3>More About Me</h3>
+        <h3>My Technical Skills</h3>
         {%for skill in detailedskills%}
         <div class="skill-wrapper">
+            {%if skill.logo%}
+            <img class="skill-logo" src="{{skill.logo.url}}" alt="">
+            {%endif%}
+        <div>
             <h5>{{skill.title}}</h5>
             <p>{{skill.body}}</p>
+        </div>
         </div>
         {%endfor%}
 
         
         <h4>Other Skills</h4>
-        <div class="other-skill-wrapper">
+        <div class="other-skills-wrapper">
         {%for skill in skills%}
         <div class="skill-tag">
                 <p>{{skill.title}}</p>
@@ -89,23 +94,77 @@
 
 </section >
 
-<section class="section-1">
+
+<section class="section-1" id="contacts">
     <div class="container">
-        <form  action="" method="POST" class="contact-form">
-            {%csrf_token%}
-            {%for field in form%}
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">{{field.label}}</label>
-                {{field}}
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <div class="section-heading text-center">
+                    <h2>Get <strong>In Touch</strong></h2>
+                </div>
             </div>
-    
-            {%endfor%}
-    
-            <input class="btn btn-primary" type="submit" value="submit">
-        </form>
-    </div>
 
+            <div class="col-md-7 mb-5 mb-md-0">
+                <form  action="" method="POST" class="contact-form">
+                    <h3 class="mb-5">Get In Touch</h3>
+                    {%csrf_token%}
+                    {%for field in form%}
+        
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">{{field.label}}</label>
+                        {{field}}
+                    </div>
+            
+                    {%endfor%}
+            
+                    <input class="btn btn-primary" type="submit" value="Send a Message">
+                </form>
+            </div>
+            <div class="col-md-5 pl-md-5">
+                <h3 class="mb-5">My Contact Details</h3>
+                <ul class="site-contact-details">
+                    <li>
+                        <span class="text-uppercase">Email</span>
+                        edwarddume55@gmail.com
+                    </li>
+                    <li>
+                        <span class="text-uppercase">Phone</span>
+                        +254 762378970
+                    </li>
+                    <li>
+                        <span class="text-uppercase">Address</span>
+                        Nairobi, Kenya 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="row mb-5">
+            <p class="col-12 text-center">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Developed by <i class="icon-heart text-danger" aria-hidden="true" ></i> by <a href="#" target="_blank" class="text-primary">devDume</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <p>
+                    <a href="#" class="social-item"><span class="icon-facebook2"></span></a>
+                    <a href="#" class="social-item"><span class="icon-twitter"></span></a>
+                    <a href="#" class="social-item"><span class="icon-instagram2"></span></a>
+                    <a href="#" class="social-item"><span class="icon-linkedin2"></span></a>
+                    <a href="#" class="social-item"><span class="icon-vimeo"></span></a>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</footer>
 {% endblock content %}

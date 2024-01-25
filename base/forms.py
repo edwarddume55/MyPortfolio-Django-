@@ -50,7 +50,7 @@ class EndorsementForm(ModelForm):
     class Meta:
         model = Endorsement
         fields='__all__'
-        exclude =['featured']
+        exclude =['featured', 'approved']
 
     def __init__(self, *args, **kwargs):  
         super(EndorsementForm, self).__init__(*args, **kwargs)  
